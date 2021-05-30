@@ -1,9 +1,12 @@
 const assert = require('assert');
-const {add,arrayFunction,obj1,obj2,regex} = require ('../src/test');
+const {add,arrayFunction,obj1,obj2,regex} = require ('../src/teste');
 const {sum} = require ('../src/soma');
 const chai = require("chai");
 const {expect}= require('chai');
 const sinon = require("sinon");
+const axios = require ('axios').default;
+const {bodyTag} = require('../src/html');
+const nock = require('nock');
 
 describe('Add  function', ()=>{
     const result = add(1,1);
@@ -73,3 +76,14 @@ describe('sum  function', ()=>{
         expect(n5).to.be.equal(18);  
     })
 });
+
+describe('Body tag', () => {
+    it('should have <body>tag',async () => {
+        nock('https://www.google.com/')
+            .get('/')
+            .reply(200, "<html><head></head><body></body></html>")
+         expect( await bodyTag()).match(/<body>/)
+       
+    })
+})
+
