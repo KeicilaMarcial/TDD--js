@@ -63,17 +63,25 @@ describe('regex function ', ()=>{
 });
 
 describe('sum  function', ()=>{
-    it('should add 2 numbers together', ()=>{
+    it('should be 2', ()=>{
         const n1 = sum(1,1)
-        const n2 = sum(2,2)
-        const n3 = sum(4,5)
-        const n4 = sum(6,7)
-        const n5 = sum(9,9)
-        expect(n1).to.be.equal(2);  
-        expect(n2).to.be.equal(4); 
-        expect(n3).to.be.equal(9);   
-        expect(n4).to.be.equal(13);  
-        expect(n5).to.be.equal(18);  
+        expect(n1).to.be.equal(2);   
+    })
+    it('should be 4', ()=>{
+      const n2 = sum(2,2)
+      expect(n2).to.be.equal(4);    
+    })
+    it('should be 9', ()=>{
+      const n3 =sum(4,5)
+      expect(n3).to.be.equal(9);  
+    })
+    it('should be 13', ()=>{
+      const n4 =sum(6,7)
+      expect(n4).to.be.equal(13);  
+    })
+    it('should be 18', ()=>{
+      const n5 = sum(9,9)
+      expect(n5).to.be.equal(18); 
     })
 });
 

@@ -6,7 +6,7 @@
   "scripts": {
     "test-mocha": "mocha",
     "test-jest":"jest ./jest",
-    "coverage": "nyc --reporter=html npm run test"
+    "coverage": "nyc --reporter=html npm run test-mocha"
   },
   "repository": {
     "type": "git",
